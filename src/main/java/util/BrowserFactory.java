@@ -33,7 +33,7 @@ public class BrowserFactory {
 	public static WebDriver init() {
 		readConfig();
 		if (browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\B.sep21 selenium materials\\Exl_Project\\driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("Firefox")) {
 			System.setProperty("webdriver.gecko.driver", "driver\\geckodriver.exe");

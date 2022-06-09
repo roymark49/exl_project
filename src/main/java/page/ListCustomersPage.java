@@ -1,5 +1,6 @@
 package page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,8 +29,23 @@ WebDriver driver;
 		Assert.assertEquals(IMPORT_ELEMENT.getText(), expectedText, "Wrong page");
 	}
 	
-	public void insertOnSearchBox(String name) {
-		SEARCH_BOX_ELEMENT.sendKeys(name);
+public void verifyInsertedName(String foundname) {
+		
+		//customized xpath needed to find an element that is shifting inside a table
+		String first_half_of_xpath = "//tbody/tr[";
+		String last_half_of_xpath = "]/td[3]";
+		
+		for(int i=1 ; i<=5; i++) {
+		String name= driver.findElement(By.xpath(first_half_of_xpath + i + last_half_of_xpath)).getText();
+		
+		if(name.contains(foundname)) {
+			System.out.println("Name found");
+		}
+		
+		//break is needed to break out of the loop, when the if condition is met
+		break;
+	}
+		
 	}
 	
 }

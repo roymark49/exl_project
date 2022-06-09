@@ -68,7 +68,7 @@ public class ListCustomersTest {
 		ListCustomersPage listCustomerPage = PageFactory.initElements(driver, ListCustomersPage.class);
 		listCustomerPage.clickOnListCustomersmenu();
 		listCustomerPage.verifyListCustomersPage(LIST_CUSTOMERS_PAGE_VERIFY);
-		listCustomerPage.insertOnSearchBox(INSERT_NAME);
+		listCustomerPage.verifyInsertedName(FULLNAME);
 		
 		
 		}
